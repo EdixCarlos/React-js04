@@ -8,8 +8,12 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   return (
-    <div>
-      code here
+    <div className="App">
+      <h2>give feedbacks <br/> </h2>
+      <button onClick={votoGood}>Good</button>
+      <button onClick={votoNeutral}>Neutral</button>
+      <button onClick={votoBad}>Bad</button>
+      
     </div>
   )
 }
