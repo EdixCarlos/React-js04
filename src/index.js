@@ -9,23 +9,27 @@ const App = () => {
   const [all, setAll] = useState(0)
   const [average, setAverage] = useState(0.0)
   const [positive, setPositive] = useState(0.0)
+  const [statistic, setStatistic] =useState(false)
   const votoGood = () => {
     setGood(good+1)
     averageS()
     positiveS()
     allS()
+    setStatistic(true)
   }
   const votoNeutral = () => {
     setNeutral(neutral+1)
     averageS()
     positiveS()
     allS()
+    setStatistic(true)
   }
   const votoBad = () => {
     setBad(bad+1)
     averageS()
     positiveS()
     allS()
+    setStatistic(true)
   }
   const averageS = () => {
     setAverage((good + neutral - neutral - bad)/(good + neutral + bad))
@@ -36,6 +40,8 @@ const App = () => {
   const allS = () => {
     setAll(good + neutral + bad)
   }
+  
+  
 
   return (
     <div className="App">
@@ -43,6 +49,7 @@ const App = () => {
       <button onClick={votoGood}>Good</button>
       <button onClick={votoNeutral}>Neutral</button>
       <button onClick={votoBad}>Bad</button>
+      <h2>Statistics </h2>
       {statistic ?<Statistics average={average} all={all} positive={positive}  good={good} neutral={neutral} bad={bad}  /> : <h2>No hay nada para mostrar</h2>}
 
     </div>
