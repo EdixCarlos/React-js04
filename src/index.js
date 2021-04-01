@@ -43,10 +43,8 @@ const App = () => {
       <button onClick={votoGood}>Good</button>
       <button onClick={votoNeutral}>Neutral</button>
       <button onClick={votoBad}>Bad</button>
-      <p>
-        good {good} <br/>neutra {neutral}<br/>bad {bad}<br/>
-      all {all}<br/> average {average}<br/>positive {positive}%
-      </p>
+      {statistic ?<Statistics average={average} all={all} positive={positive}  good={good} neutral={neutral} bad={bad}  /> : <h2>No hay nada para mostrar</h2>}
+
     </div>
   )
 }
